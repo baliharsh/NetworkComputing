@@ -11,7 +11,7 @@ public class TransactionState {
 	User CurrentUser;
 	User TransferUser;
 	String[] temp;
-
+	private String ErrorMsg= "You are suppossed to enter: add value, subtract value or transfer Username value";
 	public TransactionState(ArrayList<User> users) {
 		this.Users =users;
 	}
@@ -64,10 +64,20 @@ public class TransactionState {
 		String theOutput="";
 
 		if(theInput.contains("add")) {
-			theOutput=	AddMoney(CurrentUser,spliter(theInput));
+			if(spliter(theInput).matches("[0-9]+")) {
+				theOutput=	AddMoney(CurrentUser,spliter(theInput));
+			}
+			else {
+				theOutput= ErrorMsg;
+			}
 		}
 		else if(theInput.contains("subtract")) {
-			theOutput=	SubtractMoney(CurrentUser, spliter(theInput));
+			if(spliter(theInput).matches("[0-9]+")) {
+				theOutput=	SubtractMoney(CurrentUser, spliter(theInput));
+			}
+			else {
+				theOutput= ErrorMsg;
+			}
 		}
 		else if(theInput.contains("transfer")){
 			String temp = spliter(theInput);
@@ -79,18 +89,32 @@ public class TransactionState {
 					System.out.println(TransferUser.getUserName());
 				}
 			}
+			if((TransferUser!=null)&&(funds[2].matches("[0-9]+") &&(!TransferUser.getUserName().equals(CurrentUser.getUserName())))){
 			theOutput= TransferMoney(CurrentUser, TransferUser, funds[2]);
+			TransferUser=null;
+			}
+			else {
+				theOutput= ErrorMsg;
+			}
+			
 		}
 		else {
-			theOutput="You are suppossed to enter: add value, subtract value or transfer Username value";
+			theOutput= ErrorMsg;
 		}
 		return theOutput;
 	}
 
 	//split the message
 	public synchronized String spliter(String Input) {
+		String theOutput=null;
+		try {
 		temp = Input.split(" ");
-		return temp[1];
+		theOutput =temp[1];
+		}
+		catch(Exception e) {
+			theOutput= ErrorMsg;
+		}
+		return theOutput;
 	}
 	//convert into double
 	public synchronized double DoubleConverter(String Input) {
