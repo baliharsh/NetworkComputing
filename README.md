@@ -8,10 +8,31 @@ WLFB is a bank with only 3 clients and offers transaction services to its client
 2) Subtract Money (Withdraw)
 3) Transfer Money (Transfer)
 
-**Instructions on how to run the application** <br />
+**Instructions on How to run the application** <br />
+_Please ensure Java is installed in your workstation_ <br />
 Instructions on how to run the Source Code:<br />
+1. Download the WLFB_BankAPP file.
+2. Unzip the file.
+3. Open up a JAVA IDE (Eclipse)
+4. Import the file into the IDE.
+5. Open 4 Console windows. 
+6. Open the server class and Run it.
+7. Open Client class and Run it.
+8. Open Client2 class and Run it.
+9. Open Client3 class and Run it.
+10. Assign console view to server and each client.
+11. Ready to perform Transactions.
 
 Instructions on how to run the Compiled Code:<br />
+1. Download WLFB Compile Code file.
+2. Unzip the file.
+3. Open four Command Prompts(CMD).
+4. In all the Command Prompt change the directory using **cd /** command and change it to the location where the files are saved.
+5. Use **java Server** command to run the server.
+6. Use **java Client** command to run the client1.
+7. Use **java Client2** command to run the client2.
+8. Use **java Client3** command to run the client3.
+9. Ready to perform Transactions.
 
 **Current Bug**
 _#BUG1_<br />
