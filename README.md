@@ -27,7 +27,7 @@ Instructions on how to run the Compiled Code:<br />
 1. Download WLFB Compile Code file.
 2. Unzip the file.
 3. Open four Command Prompts(CMD).
-4. In all the Command Prompt change the directory using **cd /** command and change it to the location where the files are saved.
+4. In all the Command Prompt change the directory using **cd \** command and change it to the location where the files are saved.
 5. Use **java Server** command to run the server.
 6. Use **java Client** command to run the client1.
 7. Use **java Client2** command to run the client2.
